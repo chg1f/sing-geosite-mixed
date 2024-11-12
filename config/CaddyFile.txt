@@ -1,0 +1,36 @@
+{{- /* vim: ft=gotmpl */ -}}
+{{- $tld := or (.Req.URL.Query.Get "tld") "chg1f.onl" }}
+{{- $hostname := (.Req.URL.Query.Get "hostname") "butterfly" }}
+{{- $port := or (.Req.URL.Query.Get "port") 8080 }}
+{{- $path := or (.Req.URL.Query.Get "path") "/proxy" }}
+{{- $email := or (.Req.URL.Query.Get "email") "chongiofai@gmail.com" }}
+{{- $token := (.Req.URL.Query.Get "token") }}
+{
+	admin off
+	email {{ $email }}
+	dynamic_dns {
+		provider cloudflare {{ $token }}
+		domains {
+			{{ $tld }} {{ $hostname }}
+		}
+	}
+}
+
+{{ $hostname }}.{{ $tld }} {
+	log {
+		output stderr
+	}
+	tls {
+		dns cloudflare {{ $token }}
+	}
+	reverse_proxy {{ $path }} :{{ $port }} {
+		transport http {
+			versions h2c
+		}
+	}
+	root * /root/.local/share
+	file_server
+	templates {
+		mime .tmpl text/plain
+	}
+}

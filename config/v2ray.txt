@@ -1,0 +1,41 @@
+{{- /* vim: et ts=2 ft=gotmpl */ -}}
+{{- $tld := or (.Req.URL.Query.Get "tld") "chg1f.onl" }}
+{{- $hostname := (.Req.URL.Query.Get "hostname") "butterfly" }}
+{{- $port := or (.Req.URL.Query.Get "port") 8080 }}
+{{- $path := or (.Req.URL.Query.Get "path") "/proxy" }}
+{{- $uuid := or (.Req.URL.Query.Get "uuid") uuidv4 }}
+{{- $users := (splitList "," (or (.Req.URL.Query.Get "users") uuidv4) }}
+{{- $method := or (.Req.URL.Query.Get "method") "b64enc" }}
+{
+  "log": { "loglevel": "debug", "dnslog": true },
+  "inbounds": [
+    {
+      "tag": "trojan-in",
+      "protocol": "trojan",
+      "listen": "127.0.0.1",
+      "port": 7000,
+      "streamSettings": {
+        "security": "none",
+        "network": "http",
+        "httpSettings": { "path": "{{ $path }}" }
+      },
+      "settings": {
+        "clients": [
+          {{- range $i, $v := $users }}
+          { "email": "{{ $v }}", "password": "{{ if eq "$method" "b64enc" }}{{ b64enc $v }}{{ else }}{{ derivePassword 1 "maximum" $v $uuid (printf "%s.%s" $hostname $tld)}}{{ end }}" }{{ if ne $i (sub (len $users) 1) }},{{ end }}
+          {{- end }}
+        ]
+      }
+    }
+  ],
+  "outbounds": [{ "tag": "direct-out", "protocol": "freedom" }],
+  "policy": {
+    "system": {
+      "statsInboundUplink": true,
+      "statsInboundDownlink": true,
+      "statsOutboundUplink": true,
+      "statsOutboundDownlink": true
+    }
+  },
+  "stats": {}
+}

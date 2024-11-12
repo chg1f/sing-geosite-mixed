@@ -1,0 +1,212 @@
+{{- /* vim: et ts=2 ft=gotmpl */ -}}
+{{- $uuid := (.Req.URL.Query.Get "uuid") }}
+{{- $method:= or (.Req.URL.Query.Get "method") "b64enc" }}
+{{- $cache := (.Req.URL.Query.Get "cache") }}
+{{- $clash := (.Req.URL.Query.Get "clash") }}
+{{- $fakeip := eq (.Req.URL.Query.Get "fakeip") "true" }}
+{{- $tun := eq (.Req.URL.Query.Get "tun") "true" }}
+{{- $strategy := (.Req.URL.Query.Get "strategy")  }}
+{{- $adguard := eq (.Req.URL.Query.Get "adguard") "true" }}
+{{- $verbose := eq (.Req.URL.Query.Get "verbose") "true" }}
+{{- $log := (.Req.URL.Query.Get "log") }}
+{{- /*
+cat > /config/outbounds.json << EOF
+[
+  {
+    "uuid": "$(uuidgen)",
+    "hostname": "$(cat /etc/hostname)",
+    "sni": "$(cat /etc/hostname).chg1f.onl",
+    "ipv4": "$(curl https://ifconfig.me)",
+    "ipv6": "$(curl -6 https://ifconfig.me)"
+  }
+]
+EOF
+*/ -}}
+{{- $outbounds := (readFile (or (.Req.URL.Query.Get "outbounds") "/config/outbounds.json") | fromJson) }}
+{{- $reject := (splitList "," (or (.Req.URL.Query.Get "reject") "reject")) }}
+{{- $direct := (splitList "," (or (.Req.URL.Query.Get "direct") "direct,cncidr")) }}
+{{- $proxy := (splitList "," (or (.Req.URL.Query.Get "proxy") "proxy,telegramcidr")) }}
+
+{{- $config := dict }}
+{{- $_ := set $config "experimental" dict }}
+{{- if $cache }}
+  {{-
+    $_ := set $config.experimental "cache_file" (
+    dict
+      "enabled" true
+      "path" $cache
+      "store_rdrc" true
+      "store_fakeip" true
+    )
+  }}
+{{- end }}
+{{- if $clash }}
+  {{-
+    $_ := set $config.experimental "clash_api" (
+      dict
+        "external_controller" "127.0.0.1:9090"
+        "external_ui" $clash
+        "external_ui_download_url" "https://github.com/MetaCubeX/Yacd-meta/archive/gh-pages.zip"
+        "secret" $uuid
+    )
+  }}
+{{- end }}
+
+{{-
+  $_ := set $config "log" (
+    dict
+      "timestamp" true
+      "level" ($verbose | ternary "trace" "warn")
+      "output" $log
+  )
+}}
+{{-
+  $_ := set $config "dns" (
+    dict
+      "servers" (
+        list
+          (dict "tag" "direct-dns" "address" "local" "detour" "direct-out")
+          (dict "tag" "google-dns" "address" "8.8.4.4" "detour" "direct-out")
+          (dict "tag" "adguard-doh" "address" "quic://dns.adguard.com" "address_resolver" "google-dns" "detour" "proxy-out")
+          (dict "tag" "cloudflare-doh" "address" "https://1.1.1.1/dns-query" "address_resolver" "google-dns" "detour" "proxy-out")
+      )
+      "independent_cache" true
+      "rules" (
+        list
+          (dict "server" "direct-dns" "clash_mode" "Direct")
+      )
+      "final" ($adguard | ternary "adguard-doh" "cloudflare-doh")
+  )
+}}
+{{- if $strategy }}
+  {{- $_ := set $config.dns "strategy" $strategy }}
+{{- end }}
+{{- if $fakeip }}
+  {{- $_ := set $config.dns "fakeip" (dict "enabled" true "inet4_range" "198.18.0.0/15" "inet6_range" "fc00::/18") }}
+  {{- $_ := set $config.dns "servers" (prepend $config.dns.servers (dict "tag" "fakeip-dns" "address" "fakeip")) }}
+{{- end }}
+
+{{-
+  $_ := set $config "inbounds" (
+    list
+      (dict  "tag" "dns-in" "type" "direct" "network" "udp" "listen" "127.0.0.1" "listen_port" 5533)
+      (dict  "tag" "mixed-in" "type" "mixed" "listen" "127.0.0.1" "listen_port" 7890)
+  )
+}}
+{{- if $tun }}
+{{-
+  $_ := set $config "inbounds" (prepend $config.inbounds (
+    dict
+      "tag" "tun-in"
+      "type" "tun"
+      "address" (list "198.51.100.1/30" "fc01::ff01/126")
+      "auto_route" true
+      "strict_route" true
+      "platform" (dict "http_proxy" (dict "enabled" true "server" "127.0.0.1" "server_port" 7890))
+  ))
+}}
+{{- end }}
+{{- $_ := set $config "outbounds" list }}
+{{- range $outbounds -}}
+  {{- if .ipv4 }}
+    {{-
+      $_ := set $config "outbounds" (prepend $config.outbounds (
+        dict
+          "tag" (printf "%s-ipv4-out" .hostname)
+          "type" "trojan"
+          "server" .ipv4
+          "server_port" 443
+          "network" "tcp"
+          "password" (eq $method "b64enc" | ternary (b64enc $uuid) (derivePassword 1 "maximum" $uuid .uuid .sni))
+          "transport" (dict "type" "http" "host" (list .sni) "path" "/proxy")
+          "tls" (dict "enabled" true "server_name" .sni)
+      ))
+    }}
+  {{- end }}
+  {{- if .ipv6 }}
+    {{-
+      $_ := set $config "outbounds" (prepend $config.outbounds (
+        dict
+          "tag" (printf "%s-ipv6-out" .hostname)
+          "type" "trojan"
+          "server" .ipv6
+          "server_port" 443
+          "network" "tcp"
+          "password" (eq $method "b64enc" | ternary (b64enc $uuid) (derivePassword 1 "maximum" $uuid .uuid .sni))
+          "transport" (dict "type" "http" "host" (list .sni) "path" "/proxy")
+          "tls" (dict "enabled" true "server_name" .sni)
+      ))
+    }}
+  {{- end }}
+{{- end -}}
+{{- $outboundtags := list }}{{- range $config.outbounds }}{{- $outboundtags = append $outboundtags .tag }}{{- end }}
+{{-
+  $_ := set $config "outbounds" (
+    concat
+      (
+        list
+          (
+            dict
+              "tag" "final-out"
+              "type" "selector"
+              "interrupt_exist_connections" true
+              "default" "proxy-out"
+              "outbounds" (list "proxy-out" "direct-out")
+          )
+          (dict "tag" "direct-out" "type" "direct")
+          (
+            dict
+              "tag" "proxy-out"
+              "type" "selector"
+              "interrupt_exist_connections" true
+              "default" "urltest-out"
+              "outbounds" (concat (list "urltest-out" "direct-out") $outboundtags)
+          )
+          (
+            dict
+              "tag" "urltest-out"
+              "type" "urltest"
+              "interrupt_exist_connections" true
+              "interval" "30m"
+              "idle_timeout" "30m"
+              "url" "https://client3.google.com/generate_204"
+              "outbounds" (concat (list "direct-out") $outboundtags)
+          )
+      )
+      $config.outbounds
+  )
+}}
+{{-
+  $_ := set $config "route" (
+    dict
+      "final" "final-out"
+      "rules" (
+        list
+          (dict "action" "sniff")
+          (dict "action" "hijack-dns" "protocol" "dns")
+          (dict "outbound" "direct-out" "ip_is_private" true)
+          (dict "outbound" "direct-out" "clash_mode" "Direct")
+          (dict "outbound" "proxy-out" "clash_mode" "Global")
+      )
+      "rule_set" list
+  )
+}}
+{{- if $reject }}
+  {{- range $reject }}
+    {{- $_ := set $config.route "rule_set" (append $config.route.rule_set (dict "tag" . "type" "remote" "update_interval" "1d" "download_detour" "proxy-out" "format" "binary" "url" (printf "https://raw.githubusercontent.com/chg1f/sing-geosite-mixed/rule-set/%s.srs" .))) }}
+  {{- end }}
+  {{- $_ := set $config.route "rules" (append $config.route.rules (dict "action" "reject" "method" "default" "rule_set" $reject)) }}
+{{- end }}
+{{- if $direct }}
+  {{- range (splitList "," (.Req.URL.Query.Get "direct")) }}
+    {{- $_ := set $config.route "rule_set" (append $config.route.rule_set (dict "tag" . "type" "remote" "update_interval" "1d" "download_detour" "proxy-out" "format" "binary" "url" (printf "https://raw.githubusercontent.com/chg1f/sing-geosite-mixed/rule-set/%s.srs" .))) }}
+  {{- end }}
+  {{- $_ := set $config.route "rules" (append $config.route.rules (dict "outbound" "direct-out" "rule_set" $direct)) }}
+{{- end }}
+{{- if $proxy }}
+  {{- range $proxy }}
+    {{- $_ := set $config.route "rule_set" (append $config.route.rule_set (dict "tag" . "type" "remote" "update_interval" "1d" "download_detour" "proxy-out" "format" "binary" "url" (printf "https://raw.githubusercontent.com/chg1f/sing-geosite-mixed/rule-set/%s.srs" .))) }}
+  {{- end }}
+  {{- $_ := set $config.route "rules" (append $config.route.rules (dict "outbound" "proxy-out" "rule_set" $proxy)) }}
+{{- end }}
+{{- $config | toPrettyJson }}
