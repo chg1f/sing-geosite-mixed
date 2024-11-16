@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "gofile.me",
+        "quickconnect.to",
+        "synology.com",
+        "synologydownload.com",
+        "synologyupdate.com",
+        "quickconnect.cn",
+        "synology.cn"
+      ],
+      "domain_suffix": [
+        ".gofile.me",
+        ".quickconnect.to",
+        ".synology.com",
+        ".synologydownload.com",
+        ".synologyupdate.com",
+        ".quickconnect.cn",
+        ".synology.cn"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "guokr.com",
+        "guokr.net"
+      ],
+      "domain_suffix": [
+        ".guokr.com",
+        ".guokr.net"
+      ]
+    }
+  ]
+}

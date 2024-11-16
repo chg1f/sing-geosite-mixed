@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": "pingan.com.hk",
+      "domain_suffix": ".pingan.com.hk"
+    }
+  ]
+}

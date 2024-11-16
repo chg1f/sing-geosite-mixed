@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "koowo.cn",
+        "koowo.com",
+        "kuwo.cn"
+      ],
+      "domain_suffix": [
+        ".koowo.cn",
+        ".koowo.com",
+        ".kuwo.cn"
+      ]
+    }
+  ]
+}

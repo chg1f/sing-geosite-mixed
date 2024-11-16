@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "ctrip.co.id",
+        "ctrip.co.kr",
+        "ctrip.co.th",
+        "ctrip.com.hk",
+        "ctrip.my",
+        "ctrip.sg",
+        "ctripbuy.hk",
+        "hhtravel.com.tw",
+        "trip.com",
+        "tripcdn.com"
+      ],
+      "domain_suffix": [
+        ".ctrip.co.id",
+        ".ctrip.co.kr",
+        ".ctrip.co.th",
+        ".ctrip.com.hk",
+        ".ctrip.my",
+        ".ctrip.sg",
+        ".ctripbuy.hk",
+        ".hhtravel.com.tw",
+        ".trip.com",
+        ".tripcdn.com"
+      ]
+    }
+  ]
+}
