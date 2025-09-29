@@ -54,7 +54,7 @@ func parse(vGeositeData []byte) (map[string][]geosite.Item, error) {
 				}
 				domains = append(domains, geosite.Item{
 					Type:  geosite.RuleTypeDomainSuffix,
-					Value: "." + domain.Value,
+					Value: domain.Value,
 				})
 			case routercommon.Domain_Full:
 				domains = append(domains, geosite.Item{
@@ -87,7 +87,7 @@ func parse(vGeositeData []byte) (map[string][]geosite.Item, error) {
 					}
 					attributeDomains = append(attributeDomains, geosite.Item{
 						Type:  geosite.RuleTypeDomainSuffix,
-						Value: "." + domain.Value,
+						Value: domain.Value,
 					})
 				case routercommon.Domain_Full:
 					attributeDomains = append(attributeDomains, geosite.Item{
