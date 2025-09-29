@@ -76,7 +76,7 @@ func generateClashRules(release *github.RepositoryRelease, names ...string) erro
 				if strings.HasPrefix(line, "DOMAIN,") {
 					headlessRule.Domain = append(headlessRule.Domain, line[7:])
 				} else if strings.HasPrefix(line, "DOMAIN-SUFFIX,") {
-					headlessRule.DomainSuffix = append(headlessRule.DomainSuffix, strings.TrimPrefix(line[14:], "."))
+					headlessRule.DomainSuffix = append(headlessRule.DomainSuffix, line[15:])
 				} else if strings.HasPrefix(line, "DOMAIN-KEYWORD,") {
 					headlessRule.DomainKeyword = append(headlessRule.DomainKeyword, line[15:])
 				} else if strings.HasPrefix(line, "IP-CIDR,") {
