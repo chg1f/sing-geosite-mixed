@@ -69,14 +69,14 @@ func generateClashRules(release *github.RepositoryRelease, names ...string) erro
 				Payload []string `yaml:"payload"`
 			}
 			if err := yaml.Unmarshal(rawData, &ruleProviders); err != nil {
-				ruleProviders.Payload = strings.SplitN(string(rawData), "\n", -1)
+				ruleProviders.Payload = strings.Split(string(rawData), "\n")
 			}
 			var headlessRule option.DefaultHeadlessRule
 			for _, line := range ruleProviders.Payload {
 				if strings.HasPrefix(line, "DOMAIN,") {
 					headlessRule.Domain = append(headlessRule.Domain, line[7:])
 				} else if strings.HasPrefix(line, "DOMAIN-SUFFIX,") {
-					headlessRule.DomainSuffix = append(headlessRule.DomainSuffix, line[14:])
+					headlessRule.DomainSuffix = append(headlessRule.DomainSuffix, strings.TrimPrefix(line[14:], "."))
 				} else if strings.HasPrefix(line, "DOMAIN-KEYWORD,") {
 					headlessRule.DomainKeyword = append(headlessRule.DomainKeyword, line[15:])
 				} else if strings.HasPrefix(line, "IP-CIDR,") {
