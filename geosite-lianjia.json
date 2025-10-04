@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "lianjia.com",
+        "ljcdn.com",
+        "beckyroom.com",
+        "ke.com"
+      ],
+      "domain_suffix": [
+        "lianjia.com",
+        "ljcdn.com",
+        "beckyroom.com",
+        "ke.com"
+      ]
+    }
+  ]
+}

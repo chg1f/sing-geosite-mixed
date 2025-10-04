@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "clarity.ms",
+        "nelreports.net"
+      ],
+      "domain_suffix": [
+        "clarity.ms",
+        "nelreports.net"
+      ]
+    }
+  ]
+}

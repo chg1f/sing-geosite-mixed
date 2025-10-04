@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "symantec.com",
+        "symantecliveupdate.com"
+      ],
+      "domain_suffix": [
+        "symantec.com",
+        "symantecliveupdate.com"
+      ]
+    }
+  ]
+}

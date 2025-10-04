@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "bangumi.tv",
+        "bgm.tv",
+        "chii.in"
+      ],
+      "domain_suffix": [
+        "bangumi.tv",
+        "bgm.tv",
+        "chii.in"
+      ]
+    }
+  ]
+}

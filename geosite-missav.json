@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "missav.ai",
+        "missav.com",
+        "missav.uno",
+        "missav.vip",
+        "missav.ws"
+      ],
+      "domain_suffix": [
+        "missav.ai",
+        "missav.com",
+        "missav.uno",
+        "missav.vip",
+        "missav.ws"
+      ]
+    }
+  ]
+}

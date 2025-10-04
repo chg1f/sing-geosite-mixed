@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "thetrackernetwork.com",
+        "tracker.gg",
+        "tracker.network"
+      ],
+      "domain_suffix": [
+        "thetrackernetwork.com",
+        "tracker.gg",
+        "tracker.network"
+      ]
+    }
+  ]
+}

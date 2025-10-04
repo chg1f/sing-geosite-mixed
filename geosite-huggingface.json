@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "hf.co",
+        "huggingface.co"
+      ],
+      "domain_suffix": [
+        "hf.co",
+        "huggingface.co"
+      ]
+    }
+  ]
+}

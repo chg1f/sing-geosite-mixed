@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "dji.com",
+        "dji.net",
+        "djicdn.com",
+        "djiits.com",
+        "djiops.com",
+        "djiservice.org",
+        "skypixel.com",
+        "robomaster.com"
+      ],
+      "domain_suffix": [
+        "dji.com",
+        "dji.net",
+        "djicdn.com",
+        "djiits.com",
+        "djiops.com",
+        "djiservice.org",
+        "skypixel.com",
+        "robomaster.com"
+      ]
+    }
+  ]
+}
