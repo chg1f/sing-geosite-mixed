@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "cdn.ampproject.org",
+        "researchkit.cn",
+        "researchkit.com.cn",
+        "swiftui.cn",
+        "swiftui.com.cn",
+        "firebase-settings.crashlytics.com",
+        "cdn.jetbrains.com",
+        "download-cdn.jetbrains.com.cn",
+        "microsoftreactor.cn",
+        "microsoftreactor.com.cn",
+        "reactorms.com.cn"
+      ],
+      "domain_suffix": [
+        "researchkit.cn",
+        "researchkit.com.cn",
+        "swiftui.cn",
+        "swiftui.com.cn",
+        "cdn.jetbrains.com",
+        "download-cdn.jetbrains.com.cn",
+        "microsoftreactor.cn",
+        "microsoftreactor.com.cn",
+        "reactorms.com.cn"
+      ]
+    }
+  ]
+}

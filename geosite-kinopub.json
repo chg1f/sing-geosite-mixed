@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "kino.pub",
+        "kinopub.online",
+        "gfw.ovh",
+        "mos-gorsud.co"
+      ],
+      "domain_suffix": [
+        "kino.pub",
+        "kinopub.online",
+        "gfw.ovh",
+        "mos-gorsud.co"
+      ],
+      "domain_regex": "(\\w+)-static-[0-9]+\\.cdntogo\\.net$"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "wallhaven.cc",
+        "whvn.cc"
+      ],
+      "domain_suffix": [
+        "wallhaven.cc",
+        "whvn.cc"
+      ]
+    }
+  ]
+}
