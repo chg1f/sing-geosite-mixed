@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "ozon.ru",
+        "ozone.ru",
+        "ozonusercontent.com"
+      ],
+      "domain_suffix": [
+        "ozon.ru",
+        "ozone.ru",
+        "ozonusercontent.com"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": "hsqh.net",
+      "domain_suffix": "hsqh.net"
+    }
+  ]
+}

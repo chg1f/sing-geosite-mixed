@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": "coze.com",
+      "domain_suffix": "coze.com"
+    }
+  ]
+}

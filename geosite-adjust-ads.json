@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "adjust.com",
+        "adjust.net.in",
+        "adjust.io",
+        "adjust.world"
+      ],
+      "domain_suffix": [
+        "adjust.com",
+        "adjust.net.in",
+        "adjust.io",
+        "adjust.world"
+      ]
+    }
+  ]
+}

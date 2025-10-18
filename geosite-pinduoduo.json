@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "pddcdn.com",
+        "pddpic.com",
+        "pinduoduo.com",
+        "pinduoduo.net",
+        "yangkeduo.com"
+      ],
+      "domain_suffix": [
+        "pddcdn.com",
+        "pddpic.com",
+        "pinduoduo.com",
+        "pinduoduo.net",
+        "yangkeduo.com"
+      ]
+    }
+  ]
+}

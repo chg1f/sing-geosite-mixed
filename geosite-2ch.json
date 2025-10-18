@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "2ch.hk",
+        "2ch.life"
+      ],
+      "domain_suffix": [
+        "2ch.hk",
+        "2ch.life"
+      ]
+    }
+  ]
+}

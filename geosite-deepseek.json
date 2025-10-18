@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": "deepseek.com",
+      "domain_suffix": "deepseek.com"
+    }
+  ]
+}

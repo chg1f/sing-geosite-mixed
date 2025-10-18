@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "marscode.com",
+        "trae.ai"
+      ],
+      "domain_suffix": [
+        "marscode.com",
+        "trae.ai"
+      ]
+    }
+  ]
+}

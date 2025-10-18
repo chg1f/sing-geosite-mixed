@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": "samsungads.com",
+      "domain_suffix": "samsungads.com"
+    }
+  ]
+}
