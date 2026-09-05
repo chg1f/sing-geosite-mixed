@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "beget.com",
+        "beget.ru"
+      ],
+      "domain_suffix": [
+        "beget.com",
+        "beget.ru"
+      ]
+    }
+  ]
+}

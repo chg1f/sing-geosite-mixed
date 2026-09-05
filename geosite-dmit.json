@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "dmit.io",
+        "dmit.sh"
+      ],
+      "domain_suffix": [
+        "dmit.io",
+        "dmit.sh"
+      ]
+    }
+  ]
+}

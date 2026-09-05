@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "jav.app",
+        "javdb.com",
+        "jdbimgs.com",
+        "jdbstatic.com"
+      ],
+      "domain_suffix": [
+        "jav.app",
+        "javdb.com",
+        "jdbimgs.com",
+        "jdbstatic.com"
+      ],
+      "domain_regex": "javdb\\d+\\.com$"
+    }
+  ]
+}

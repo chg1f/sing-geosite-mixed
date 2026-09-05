@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": "4pda.to",
+      "domain_suffix": "4pda.to"
+    }
+  ]
+}
