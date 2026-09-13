@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": "mytvsuper.com",
+      "domain_suffix": "mytvsuper.com"
+    }
+  ]
+}

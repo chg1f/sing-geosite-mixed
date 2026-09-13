@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "tvbc.com.cn",
+        "etnet.com.cn",
+        "etnetchina.com.cn",
+        "cn-cdn1.skymansion.net",
+        "thetype.cloud"
+      ],
+      "domain_suffix": [
+        "tvbc.com.cn",
+        "etnet.com.cn",
+        "etnetchina.com.cn",
+        "cn-cdn1.skymansion.net",
+        "thetype.cloud"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "iyf.tv",
+        "yfsp.tv"
+      ],
+      "domain_suffix": [
+        "iyf.tv",
+        "yfsp.tv"
+      ]
+    }
+  ]
+}

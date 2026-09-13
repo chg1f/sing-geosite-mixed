@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": "dt.dbankcloud.ru",
+      "domain_suffix": "dt.dbankcloud.ru"
+    }
+  ]
+}
