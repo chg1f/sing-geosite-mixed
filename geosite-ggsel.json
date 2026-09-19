@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "ggsel.com",
+        "ggsel.net"
+      ],
+      "domain_suffix": [
+        "ggsel.com",
+        "ggsel.net"
+      ]
+    }
+  ]
+}

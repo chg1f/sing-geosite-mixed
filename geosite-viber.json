@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "viber.com",
+        "viber.co",
+        "viber.me",
+        "vbcdn.com",
+        "vbcdn.net",
+        "s-bid.rmp.rakuten.com"
+      ],
+      "domain_suffix": [
+        "viber.com",
+        "viber.co",
+        "viber.me",
+        "vbcdn.com",
+        "vbcdn.net",
+        "s-bid.rmp.rakuten.com"
+      ]
+    }
+  ]
+}

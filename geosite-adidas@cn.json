@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "adidas.cn",
+        "adidas.com.cn",
+        "adidasspecialtysports.cn"
+      ],
+      "domain_suffix": [
+        "adidas.cn",
+        "adidas.com.cn",
+        "adidasspecialtysports.cn"
+      ]
+    }
+  ]
+}
