@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "sekai.colorfulpalette.org",
+        "pjsekai.sega.jp"
+      ],
+      "domain_suffix": [
+        "sekai.colorfulpalette.org",
+        "pjsekai.sega.jp"
+      ]
+    }
+  ]
+}

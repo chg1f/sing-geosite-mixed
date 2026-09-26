@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "chef.io",
+        "getfiddler.com",
+        "kemptechnologies.com",
+        "progress.com",
+        "sharefile.com",
+        "telerik.com"
+      ],
+      "domain_suffix": [
+        "chef.io",
+        "getfiddler.com",
+        "kemptechnologies.com",
+        "progress.com",
+        "sharefile.com",
+        "telerik.com"
+      ]
+    }
+  ]
+}

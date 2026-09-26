@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "adsgram.ai",
+        "graph.whatsapp.com",
+        "graph.whatsapp.net"
+      ],
+      "domain_suffix": [
+        "adsgram.ai",
+        "graph.whatsapp.com",
+        "graph.whatsapp.net"
+      ]
+    }
+  ]
+}
