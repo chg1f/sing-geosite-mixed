@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "plex.com",
+        "plex.services",
+        "plex.tv",
+        "plexapp.com"
+      ],
+      "domain_suffix": [
+        "plex.com",
+        "plex.services",
+        "plex.tv",
+        "plexapp.com"
+      ]
+    }
+  ]
+}

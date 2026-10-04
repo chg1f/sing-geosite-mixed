@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "zynga.com",
+        "zyngaplayersupport.com",
+        "zyngapoker.com"
+      ],
+      "domain_suffix": [
+        "zynga.com",
+        "zyngaplayersupport.com",
+        "zyngapoker.com"
+      ]
+    }
+  ]
+}

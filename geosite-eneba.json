@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "eneba.com",
+        "eneba.games"
+      ],
+      "domain_suffix": [
+        "eneba.com",
+        "eneba.games"
+      ]
+    }
+  ]
+}
