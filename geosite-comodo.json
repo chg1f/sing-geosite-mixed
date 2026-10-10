@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "comodo.com",
+        "comodo.net"
+      ],
+      "domain_suffix": [
+        "comodo.com",
+        "comodo.net"
+      ]
+    }
+  ]
+}

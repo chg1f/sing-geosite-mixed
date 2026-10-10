@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "win-line.ru",
+        "winline.ru",
+        "winlinebet.ru"
+      ],
+      "domain_suffix": [
+        "win-line.ru",
+        "winline.ru",
+        "winlinebet.ru"
+      ]
+    }
+  ]
+}

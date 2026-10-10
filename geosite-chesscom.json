@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "chess.com",
+        "chesscomfiles.com"
+      ],
+      "domain_suffix": [
+        "chess.com",
+        "chesscomfiles.com"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": "insights-collector.gog.com",
+      "domain_suffix": "insights-collector.gog.com"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "soyjak.party",
+        "soyjak.st"
+      ],
+      "domain_suffix": [
+        "soyjak.party",
+        "soyjak.st"
+      ]
+    }
+  ]
+}

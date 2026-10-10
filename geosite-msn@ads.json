@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "browser.events.data.msn.cn",
+        "browser.events.data.msn.com"
+      ],
+      "domain_suffix": [
+        "browser.events.data.msn.cn",
+        "browser.events.data.msn.com"
+      ]
+    }
+  ]
+}

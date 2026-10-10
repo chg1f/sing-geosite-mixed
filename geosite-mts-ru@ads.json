@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "a.mts.ru",
+        "obs.mts.ru"
+      ],
+      "domain_suffix": [
+        "a.mts.ru",
+        "obs.mts.ru"
+      ]
+    }
+  ]
+}

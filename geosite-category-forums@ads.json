@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "log.dzen.ru",
+        "ms.dzen.ru"
+      ],
+      "domain_suffix": [
+        "log.dzen.ru",
+        "ms.dzen.ru"
+      ]
+    }
+  ]
+}
