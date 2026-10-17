@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "samsung.com.cn",
+        "samsungcloudcn.com",
+        "samsungeshop.com.cn",
+        "samsunghealthcn.com"
+      ],
+      "domain_suffix": [
+        "samsung.com.cn",
+        "samsungcloudcn.com",
+        "samsungeshop.com.cn",
+        "samsunghealthcn.com"
+      ]
+    }
+  ]
+}
