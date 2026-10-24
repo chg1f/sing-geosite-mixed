@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "framer.com",
+        "framer.website",
+        "framercanvas.com",
+        "framerstatic.com",
+        "framerusercontent.com"
+      ],
+      "domain_suffix": [
+        "framer.com",
+        "framer.website",
+        "framercanvas.com",
+        "framerstatic.com",
+        "framerusercontent.com"
+      ]
+    }
+  ]
+}

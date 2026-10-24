@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "hf.co",
+        "hf.space",
+        "huggingface.co"
+      ],
+      "domain_suffix": [
+        "hf.co",
+        "hf.space",
+        "huggingface.co"
+      ]
+    }
+  ]
+}
