@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "betboom.ru",
+        "mobile-bb.com"
+      ],
+      "domain_suffix": [
+        "betboom.ru",
+        "mobile-bb.com"
+      ]
+    }
+  ]
+}

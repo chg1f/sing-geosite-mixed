@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "archive-it.org",
+        "archive.org",
+        "openlibrary.org"
+      ],
+      "domain_suffix": [
+        "archive-it.org",
+        "archive.org",
+        "openlibrary.org"
+      ]
+    }
+  ]
+}
