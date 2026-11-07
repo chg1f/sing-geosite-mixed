@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "deepin.io",
+        "deepin.org"
+      ],
+      "domain_suffix": [
+        "deepin.io",
+        "deepin.org"
+      ]
+    }
+  ]
+}

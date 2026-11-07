@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "mosmetro.ru",
+        "mosmetro.tech"
+      ],
+      "domain_suffix": [
+        "mosmetro.ru",
+        "mosmetro.tech"
+      ]
+    }
+  ]
+}

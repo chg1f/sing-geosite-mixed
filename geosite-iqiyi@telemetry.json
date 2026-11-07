@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "ifacelog.iqiyi.com",
+        "mbdlog.iqiyi.com"
+      ],
+      "domain_suffix": [
+        "ifacelog.iqiyi.com",
+        "mbdlog.iqiyi.com"
+      ]
+    }
+  ]
+}

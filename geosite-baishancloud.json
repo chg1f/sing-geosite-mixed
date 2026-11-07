@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "bsclink.cn",
+        "qingcdn.com",
+        "trpcdn.net"
+      ],
+      "domain_suffix": [
+        "bsclink.cn",
+        "qingcdn.com",
+        "trpcdn.net"
+      ]
+    }
+  ]
+}

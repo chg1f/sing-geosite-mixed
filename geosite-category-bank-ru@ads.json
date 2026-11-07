@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "ads.sber.ru",
+        "clickstream.sberbank.ru",
+        "visor.sberbank.ru"
+      ],
+      "domain_suffix": [
+        "ads.sber.ru",
+        "clickstream.sberbank.ru"
+      ]
+    }
+  ]
+}
