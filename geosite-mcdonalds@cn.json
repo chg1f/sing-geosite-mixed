@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "4008-517-517.cn",
+        "mcd.cn",
+        "mcdchina.net",
+        "mcdonalds.com.cn"
+      ],
+      "domain_suffix": [
+        "4008-517-517.cn",
+        "mcd.cn",
+        "mcdchina.net",
+        "mcdonalds.com.cn"
+      ]
+    }
+  ]
+}

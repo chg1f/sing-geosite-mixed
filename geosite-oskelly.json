@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "oskelly.co",
+        "oskelly.ru"
+      ],
+      "domain_suffix": [
+        "oskelly.co",
+        "oskelly.ru"
+      ]
+    }
+  ]
+}

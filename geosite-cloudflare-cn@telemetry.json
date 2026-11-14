@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": "cloudflareinsights-cn.com",
+      "domain_suffix": "cloudflareinsights-cn.com"
+    }
+  ]
+}
