@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": "shuqistat.com",
+      "domain_suffix": "shuqistat.com"
+    }
+  ]
+}

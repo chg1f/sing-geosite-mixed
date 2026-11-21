@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "avito.com",
+        "avito.ru",
+        "avito.st",
+        "avito.tech",
+        "stats.avito.ru"
+      ],
+      "domain_suffix": [
+        "avito.com",
+        "avito.ru",
+        "avito.st",
+        "avito.tech"
+      ]
+    }
+  ]
+}

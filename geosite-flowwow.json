@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "flowwow-images.com",
+        "flowwow.com"
+      ],
+      "domain_suffix": [
+        "flowwow-images.com",
+        "flowwow.com"
+      ]
+    }
+  ]
+}

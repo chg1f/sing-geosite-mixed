@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "analytics.facebook.com",
+        "facebookads.com",
+        "pixel.facebook.com"
+      ],
+      "domain_suffix": [
+        "analytics.facebook.com",
+        "facebookads.com",
+        "pixel.facebook.com"
+      ]
+    }
+  ]
+}
