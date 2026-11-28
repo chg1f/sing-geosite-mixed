@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "eduhk.hk",
+        "xn--pssu7cz8nr8ibkx1e8a.xn--j6w193g",
+        "eduhk.edu.hk"
+      ],
+      "domain_suffix": [
+        "eduhk.hk",
+        "xn--pssu7cz8nr8ibkx1e8a.xn--j6w193g",
+        "eduhk.edu.hk"
+      ]
+    }
+  ]
+}

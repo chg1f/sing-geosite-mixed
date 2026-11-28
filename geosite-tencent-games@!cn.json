@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "tencentgames.com",
+        "levelinfinite.com",
+        "nikke-en.com"
+      ],
+      "domain_suffix": [
+        "tencentgames.com",
+        "levelinfinite.com",
+        "nikke-en.com"
+      ]
+    }
+  ]
+}

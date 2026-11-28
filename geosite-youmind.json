@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "youmind.ai",
+        "youmind.com",
+        "youmind.site"
+      ],
+      "domain_suffix": [
+        "youmind.ai",
+        "youmind.com",
+        "youmind.site"
+      ]
+    }
+  ]
+}
